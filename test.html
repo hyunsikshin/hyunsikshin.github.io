@@ -255,14 +255,14 @@
 
   <body>
     <div class="overlay" onclick="appboyBridge.logClick('close');appboyBridge.closeMessage()">
-      <div class="wrapper">
-       <div class="braze-coupon">
+       <div class="wrapper">
+        <div class="braze-coupon">
           <video
             autoplay
             muted
             loop
             playsinline
-            class="braze-video"
+            class="inlinevideo"
             poster="https://image.msscdn.net/community/assets/image/slot_machine20.png"
           >
             <source src="https://static.msscdn.net/community/assets/image/slot_machine20240125.mp4" type="video/mp4" />
@@ -280,10 +280,10 @@
 
           <div class="content-section">
             <p class="content-title">
-              축하합니다!<br />
-              20% 쿠폰 당첨 되었어요!!!!!!
+              무신사가 선물을 보냈습니다<br />
+              20% 쿠폰이 도착했어요!
             </p>
-            <p class="content-subTitle">서브 타이틀 서브 타이틀 서브 타이틀</p>
+            <p class="content-subTitle">찜해놓은 그 상품<br />한정 쿠폰으로 할인 받으세요.</p>
           </div>
 
           <button
@@ -302,7 +302,7 @@
 
     <script>
       (function () {
-        var promise = document.querySelector(".braze-video").play();
+        var promise = document.querySelector(".inlinevideo").play();
         if (promise !== undefined) {
           promise
             .then((_) => {
@@ -315,6 +315,16 @@
             });
         }
       })();
+
+      document.body.addEventListener("click touchstart", function () {
+        var videoElements = document.getElementsByClassName("inlinevideo");
+        for (var i = 0; i < videoElements.length; i++) {
+          var videoElement = videoElements[i];
+          if (videoElement.paused) {
+            videoElement.play();
+          }
+        }
+      });
     </script>
   </body>
 </html>
