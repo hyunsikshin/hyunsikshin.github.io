@@ -255,28 +255,28 @@
 
   <body>
     <div class="overlay" onclick="appboyBridge.logClick('close');appboyBridge.closeMessage()">
-       <div class="wrapper">
+      <div class="wrapper">
         <div class="braze-coupon">
-          <video
+          <!-- <video
             autoplay
             muted
             loop
             playsinline
             class="inlinevideo"
-            poster="https://image.msscdn.net/community/assets/image/slot_machine20.png"
+            poster="https://image.msscdn.net/community/assets/image/braze-coupon20240126.png"
           >
-            <source src="https://static.msscdn.net/community/assets/image/slot_machine20240125.mp4" type="video/mp4" />
+            <source src="https://static.msscdn.net/community/assets/image/braze-coupon20240126.mp4" type="video/mp4" />
             <img
-              src="https://image.msscdn.net/community/assets/image/slot_machine20.png"
+              src="https://image.msscdn.net/community/assets/image/braze-coupon20240126.png"
               alt="This browser does not support video"
             />
-          </video>
+          </video> -->
 
-          <!-- <lottie-player
-            src="https://static.msscdn.net/community/assets/image/slot_machine20240125.json"
+          <lottie-player
+            src="https://static.msscdn.net/community/assets/image/braze-coupon20240126.json"
             autoplay
             loop
-          ></lottie-player> -->
+          ></lottie-player>
 
           <div class="content-section">
             <p class="content-title">
@@ -301,30 +301,30 @@
     </div>
 
     <script>
-      (function () {
-        var promise = document.querySelector(".inlinevideo").play();
-        if (promise !== undefined) {
-          promise
-            .then((_) => {
-              // 자동재생 환경 //
-              console.log("ok");
-            })
-            .catch((error) => {
-              // 자동재생 중지 환경 //
-              console.log("not ok");
-            });
-        }
-      })();
+      // (function () {
+      //   var promise = document.querySelector(".inlinevideo").play();
+      //   if (promise !== undefined) {
+      //     promise
+      //       .then((_) => {
+      //         // 자동재생 환경 //
+      //         console.log("ok");
+      //       })
+      //       .catch((error) => {
+      //         // 자동재생 중지 환경 //
+      //         console.log("not ok");
+      //       });
+      //   }
+      // })();
 
-      document.body.addEventListener("click touchstart", function () {
-        var videoElements = document.getElementsByClassName("inlinevideo");
-        for (var i = 0; i < videoElements.length; i++) {
-          var videoElement = videoElements[i];
-          if (videoElement.paused) {
-            videoElement.play();
-          }
-        }
-      });
+      // document.body.addEventListener("click touchstart", function () {
+      //   var videoElements = document.getElementsByClassName("inlinevideo");
+      //   for (var i = 0; i < videoElements.length; i++) {
+      //     var videoElement = videoElements[i];
+      //     if (videoElement.paused) {
+      //       videoElement.play();
+      //     }
+      //   }
+      // });
     </script>
   </body>
 </html>
