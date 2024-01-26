@@ -256,19 +256,18 @@
   <body>
     <div class="overlay" onclick="appboyBridge.logClick('close');appboyBridge.closeMessage()">
       <div class="wrapper">
-        <div class="braze-coupon">
+       <div class="braze-coupon">
           <video
             autoplay
             muted
             loop
             playsinline
             class="braze-video"
-            poster="https://image.msscdn.net/community/assets/image/coupon-letter-reward.png"
+            poster="https://image.msscdn.net/community/assets/image/slot_machine20.png"
           >
             <source src="https://static.msscdn.net/community/assets/image/slot_machine20240125.mp4" type="video/mp4" />
-
             <img
-              src="https://image.msscdn.net/community/assets/image/coupon-letter-reward.png"
+              src="https://image.msscdn.net/community/assets/image/slot_machine20.png"
               alt="This browser does not support video"
             />
           </video>
@@ -282,7 +281,7 @@
           <div class="content-section">
             <p class="content-title">
               축하합니다!<br />
-              20% 쿠폰 당첨 되었어요.
+              20% 쿠폰 당첨 되었어요!!!!!!
             </p>
             <p class="content-subTitle">서브 타이틀 서브 타이틀 서브 타이틀</p>
           </div>
@@ -302,15 +301,20 @@
     </div>
 
     <script>
-      document.body.addEventListener("touchstart", function () {
-        var videoElements = document.getElementsByClassName("braze-video");
-        for (var i = 0; i < videoElements.length; i++) {
-          var videoElement = videoElements[i];
-          if (videoElement.paused) {
-            videoElement.play();
-          }
+      (function () {
+        var promise = document.querySelector(".braze-video").play();
+        if (promise !== undefined) {
+          promise
+            .then((_) => {
+              // 자동재생 환경 //
+              console.log("ok");
+            })
+            .catch((error) => {
+              // 자동재생 중지 환경 //
+              console.log("not ok");
+            });
         }
-      });
+      })();
     </script>
   </body>
 </html>
