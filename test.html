@@ -257,26 +257,39 @@
     <div class="overlay" onclick="appboyBridge.logClick('close');appboyBridge.closeMessage()">
       <div class="wrapper">
         <div class="braze-coupon">
-             <video id="my-video" autoplay muted loop playsinline poster="https://image.msscdn.net/community/assets/image/coupon-letter-reward.png">
-              <source src="https://static.msscdn.net/community/assets/image/slot_machine20240125.mp4" type="video/mp4" />
-            
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            class="braze-video"
+            poster="https://image.msscdn.net/community/assets/image/coupon-letter-reward.png"
+          >
+            <source src="https://static.msscdn.net/community/assets/image/slot_machine20240125.mp4" type="video/mp4" />
+
             <img
               src="https://image.msscdn.net/community/assets/image/coupon-letter-reward.png"
               alt="This browser does not support video"
             />
           </video>
 
+          <!-- <lottie-player
+            src="https://static.msscdn.net/community/assets/image/slot_machine20240125.json"
+            autoplay
+            loop
+          ></lottie-player> -->
+
           <div class="content-section">
             <p class="content-title">
               축하합니다!<br />
-              스크립트 1
+              20% 쿠폰 당첨 되었어요.
             </p>
             <p class="content-subTitle">서브 타이틀 서브 타이틀 서브 타이틀</p>
           </div>
 
           <button
             class="content-button"
-            onclick="window.location.href='https://www.musinsa.com/member/onboarding/curation'"
+            onclick="appboyBridge.logClick('0');window.location.href='https://www.musinsa.com/member/onboarding/curation'"
           >
             쿠폰 발급 받으러 가기
           </button>
@@ -289,13 +302,15 @@
     </div>
 
     <script>
-      const videoElement = document.getElementById("my-video");
-      videoElement
-        .play()
-        .then(() => {})
-        .catch((error) => {
-          videoElement.setAttribute("controls", "controls");
-        });
+      document.body.addEventListener("touchstart", function () {
+        var videoElements = document.getElementsByClassName("braze-video");
+        for (var i = 0; i < videoElements.length; i++) {
+          var videoElement = videoElements[i];
+          if (videoElement.paused) {
+            videoElement.play();
+          }
+        }
+      });
     </script>
   </body>
 </html>
