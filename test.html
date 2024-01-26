@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>무신사</title>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      html,
+      body,
+      p,
+      ol,
+      ul,
+      li,
+      dl,
+      dt,
+      dd,
+      blockquote,
+      figure,
+      fieldset,
+      legend,
+      textarea,
+      pre,
+      iframe,
+      hr,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+        padding: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      html,
+      form {
+        box-sizing: border-box;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      img,
+      video {
+        height: auto;
+        max-width: 100%;
+      }
+      button,
+      iframe {
+        border: 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      td,
+      th {
+        padding: 0;
+      }
+
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: inherit; /* 1 */
+        font-size: 100%; /* 1 */
+        line-height: 1.15; /* 1 */
+        margin: 0; /* 2 */
+        padding: 0;
+      }
+
+      button,
+      input {
+        overflow: visible;
+      }
+
+      button,
+      select {
+        text-transform: none;
+      }
+
+      button {
+        -webkit-appearance: button;
+        background-color: inherit;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      input,
+      div,
+      textarea,
+      button,
+      select,
+      a {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+
+      /* Set core body defaults */
+      body {
+        min-height: 50vh;
+        scroll-behavior: smooth;
+        text-rendering: optimizeSpeed;
+        color: var(--text-color);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Remove list styles on ul, ol elements with a class attribute */
+      ul[class],
+      ol[class] {
+        list-style: none;
+      }
+
+      /* A elements that don't have a class get default styles */
+      a:not([class]) {
+        text-decoration-skip-ink: auto;
+      }
+
+      /* Natural flow and rhythm in articles by default */
+      article > * + * {
+        margin-top: 1em;
+      }
+
+      /* Inherit fonts for inputs and buttons */
+      input,
+      button,
+      textarea,
+      select {
+        font: inherit;
+      }
+
+      .overlay {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: 99999;
+        overflow: scroll;
+        background-color: rgb(0 0 0 / 40%);
+      }
+
+      .wrapper {
+        margin: 32px;
+        flex: 1;
+        max-width: 366px;
+      }
+
+      .braze-coupon {
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 500;
+        cursor: pointer;
+      }
+
+      .content-section {
+        background: #fff;
+        padding: 0 16px;
+        width: 100%;
+      }
+
+      .content-title {
+        font-size: 20px;
+        line-height: 28px;
+        color: #000;
+        font-weight: 500;
+        margin-bottom: 12px;
+        margin-top: 24px;
+      }
+
+      .content-subTitle {
+        font-size: 14px;
+        line-height: 22px;
+        color: #4f4f4f;
+        font-weight: 400;
+        margin-bottom: 24px;
+      }
+
+      .content-button {
+        background-color: #000;
+        color: #fff;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: center;
+        margin: 0 16px 16px;
+        width: -webkit-fill-available;
+      }
+
+      .close-button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 8px;
+      }
+
+      .close-img {
+        width: 14px;
+        height: 14px;
+        background-image: url("data:image/svg+xml,%3csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2.79999 2.80005L11.2 11.2M2.79999 11.2L11.2 2.80005' stroke='white' stroke-miterlimit='10'/%3e%3c/svg%3e");
+      }
+
+      .close-text {
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        margin-left: 4px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="overlay" onclick="appboyBridge.logClick('close');appboyBridge.closeMessage()">
+      <div class="wrapper">
+        <div class="braze-coupon">
+          <video autoplay muted loop playsinline>
+            <source src="https://static.msscdn.net/community/assets/image/slot_machine20240125.mp4" type="video/mp4" />
+          </video>
+
+          <lottie-player
+            src="https://static.msscdn.net/community/assets/image/slot_machine20240125.json"
+            autoplay
+            loop
+          ></lottie-player>
+
+          <div class="content-section">
+            <p class="content-title">
+              축하합니다!<br />
+              20% 쿠폰 당첨 되었어요.
+            </p>
+            <p class="content-subTitle">서브 타이틀 서브 타이틀 서브 타이틀</p>
+          </div>
+
+          <button
+            class="content-button"
+            onclick="window.location.href='https://www.musinsa.com/member/onboarding/curation'"
+          >
+            쿠폰 발급 받으러 가기
+          </button>
+        </div>
+        <span class="close-button" onclick="appboyBridge.logClick('close');appboyBridge.closeMessage()">
+          <div class="close-img"></div>
+          <p class="close-text">닫기</p>
+        </span>
+      </div>
+    </div>
+  </body>
+</html>
