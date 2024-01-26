@@ -257,7 +257,7 @@
     <div class="overlay" onclick="appboyBridge.logClick('close');appboyBridge.closeMessage()">
       <div class="wrapper">
         <div class="braze-coupon">
-          <video autoplay muted loop playsinline>
+          <video preload autoplay muted loop playsinline id="my-video">
             <source src="https://static.msscdn.net/community/assets/image/slot_machine20240125.mp4" type="video/mp4" />
           </video>
 
@@ -288,5 +288,15 @@
         </span>
       </div>
     </div>
+
+    <script>
+      const videoElement = document.getElementById("my-video");
+      videoElement
+        .play()
+        .then(() => {})
+        .catch((error) => {
+          videoElement.setAttribute("controls", "controls");
+        });
+    </script>
   </body>
 </html>
